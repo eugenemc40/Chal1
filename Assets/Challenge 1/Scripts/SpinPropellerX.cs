@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpinPropellerX : MonoBehaviour
 {
+    public GameObject plane;//variable object propeller
     private float rotationSpeed=1;
     // Start is called before the first frame update
     void Start()
@@ -15,6 +17,6 @@ public class SpinPropellerX : MonoBehaviour
     void Update()
     {
         //rotate propeller
-        transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime);
+        plane.transform.RotateAroundLocal(Vector3.forward, rotationSpeed);
     }
 }
