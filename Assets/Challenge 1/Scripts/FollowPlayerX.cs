@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FollowPlayerX : MonoBehaviour
 {
-    public GameObject plane;
-    private Vector3 offset = new Vector3(30, 0, 10); 
+    public GameObject plane;//variable object plane
+    private Vector3 offset = new Vector3(30, 0, 10); //variable movement ofset
 
     // Start is called before the first frame update
     void Start()
@@ -14,8 +14,9 @@ public class FollowPlayerX : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        //movement of the camera is as the plane moves ensureing its always in frame
         transform.position = plane.transform.position + offset;
     }
 }
